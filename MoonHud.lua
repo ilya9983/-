@@ -5,9 +5,7 @@ local antipos = false
 local dall = false
 local aall = false
 local nall = false
-function msg(text)
-	sampAddChatMessage("{8A17E5}[Rvanka By GoxaShow] {FFFFFF}"..text, -1)
-end
+
 function main()
 	repeat wait(0) until isSampAvailable()
 	wait(50)
