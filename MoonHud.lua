@@ -11,23 +11,21 @@ end
 function main()
 	repeat wait(0) until isSampAvailable()
 	wait(50)
-	msg("Запустился и готов ебать всем мозги")
-	msg("Канал создателя youtube.com/goxashow - Не подписался, без письки остался")
 	sampRegisterChatCommand("pnh", start)
 	sampRegisterChatCommand("dpnh", startd)
 	sampRegisterChatCommand("npnh", startn)
-	sampRegisterChatCommand("rfix", function() antipos = not antipos msg(antipos and "Fix включен" or "Fix выключен", -1) end)
-	sampRegisterChatCommand("dpnh_all", function() dall = not dall msg(dall and "На всех включен, сервер Даймонд" or "На всех выключен", -1) end)
-	sampRegisterChatCommand("pnh_all", function() aall = not aall msg(aall and "На всех включен, сервер Аризона" or "На всех выключен", -1) end)
-	sampRegisterChatCommand("npnh_all", function() nall = not nall msg(nall and "На всех включен, сервер НубоРП" or "На всех выключен", -1) end)
+	sampRegisterChatCommand("rfix", function() antipos = not antipos msg(antipos and "Fix ГўГЄГ«ГѕГ·ГҐГ­" or "Fix ГўГ»ГЄГ«ГѕГ·ГҐГ­", -1) end)
+	sampRegisterChatCommand("dpnh_all", function() dall = not dall msg(dall and "ГЌГ  ГўГ±ГҐГµ ГўГЄГ«ГѕГ·ГҐГ­, Г±ГҐГ°ГўГҐГ° Г„Г Г©Г¬Г®Г­Г¤" or "ГЌГ  ГўГ±ГҐГµ ГўГ»ГЄГ«ГѕГ·ГҐГ­", -1) end)
+	sampRegisterChatCommand("pnh_all", function() aall = not aall msg(aall and "ГЌГ  ГўГ±ГҐГµ ГўГЄГ«ГѕГ·ГҐГ­, Г±ГҐГ°ГўГҐГ° ГЂГ°ГЁГ§Г®Г­Г " or "ГЌГ  ГўГ±ГҐГµ ГўГ»ГЄГ«ГѕГ·ГҐГ­", -1) end)
+	sampRegisterChatCommand("npnh_all", function() nall = not nall msg(nall and "ГЌГ  ГўГ±ГҐГµ ГўГЄГ«ГѕГ·ГҐГ­, Г±ГҐГ°ГўГҐГ° ГЌГіГЎГ®ГђГЏ" or "ГЌГ  ГўГ±ГҐГµ ГўГ»ГЄГ«ГѕГ·ГҐГ­", -1) end)
 	while true do wait(0)
 		if dall then
 			if not isCharInAnyCar(1) then
 				dall = false
-				msg("Сядь в машину долбаеб")
+				msg("Г‘ГїГ¤Гј Гў Г¬Г ГёГЁГ­Гі Г¤Г®Г«ГЎГ ГҐГЎ")
 			elseif getDriverOfCar(storeCarCharIsInNoSave(1)) ~= 1 then
 				dall = false
-				msg("Ты берега попутал чтоле? За руль бегом сел")
+				msg("Г’Г» ГЎГҐГ°ГҐГЈГ  ГЇГ®ГЇГіГІГ Г« Г·ГІГ®Г«ГҐ? Г‡Г  Г°ГіГ«Гј ГЎГҐГЈГ®Г¬ Г±ГҐГ«")
 			end
 			for _, handle in ipairs(getAllChars()) do
 				if doesCharExist(handle)then
@@ -54,13 +52,13 @@ function main()
 		if aall then
 			if not isCharInAnyCar(1) then
 				aall = false
-				msg("Сядь в машину долбаеб")
+				msg("Г‘ГїГ¤Гј Гў Г¬Г ГёГЁГ­Гі Г¤Г®Г«ГЎГ ГҐГЎ")
 			elseif getDriverOfCar(storeCarCharIsInNoSave(1)) ~= 1 then
 				aall = false
-				msg("Ты берега попутал чтоле? За руль бегом сел")
+				msg("Г’Г» ГЎГҐГ°ГҐГЈГ  ГЇГ®ГЇГіГІГ Г« Г·ГІГ®Г«ГҐ? Г‡Г  Г°ГіГ«Гј ГЎГҐГЈГ®Г¬ Г±ГҐГ«")
 			elseif not isThisModelACar(getCarModel(storeCarCharIsInNoSave(PLAYER_PED))) then
 				aall = false
-				msg("Вылези с этой хуйни и сядь в норм бутылку!")
+				msg("Г‚Г»Г«ГҐГ§ГЁ Г± ГЅГІГ®Г© ГµГіГ©Г­ГЁ ГЁ Г±ГїГ¤Гј Гў Г­Г®Г°Г¬ ГЎГіГІГ»Г«ГЄГі!")
 			end		
 			for _, handle in ipairs(getAllChars()) do
 				if doesCharExist(handle)then
@@ -87,10 +85,10 @@ function main()
 		if nall then
 			if not isCharInAnyCar(1) then
 				nall = false
-				msg("Сядь в машину долбаеб")
+				msg("Г‘ГїГ¤Гј Гў Г¬Г ГёГЁГ­Гі Г¤Г®Г«ГЎГ ГҐГЎ")
 			elseif getDriverOfCar(storeCarCharIsInNoSave(1)) ~= 1 then
 				nall = false
-				msg("Ты берега попутал чтоле? За руль бегом сел")
+				msg("Г’Г» ГЎГҐГ°ГҐГЈГ  ГЇГ®ГЇГіГІГ Г« Г·ГІГ®Г«ГҐ? Г‡Г  Г°ГіГ«Гј ГЎГҐГЈГ®Г¬ Г±ГҐГ«")
 			end
 			for _, handle in ipairs(getAllChars()) do
 				if doesCharExist(handle)then
@@ -127,7 +125,7 @@ function fire(id)
 	local time = os.clock()
 	while not state and velo do wait(0)
 		if os.clock() - time >= 5 then
-			msg("Чтото пошло не так, выключил")
+			msg("Г—ГІГ®ГІГ® ГЇГ®ГёГ«Г® Г­ГҐ ГІГ ГЄ, ГўГ»ГЄГ«ГѕГ·ГЁГ«")
 			velo = false
 			state = false
 		end
@@ -143,21 +141,21 @@ function fire(id)
 		velo = false
 		state = false
 		sampSendChat("/limit 0") 
-		msg("Отправлен в ад")
+		msg("ГЋГІГЇГ°Г ГўГ«ГҐГ­ Гў Г Г¤")
 	end
 end
 
 function start(id)
 	if not state and not velo then
-		if dall or aall or nall then return msg("Сейчас включено на всех, куда ты лезешь ебать") end
+		if dall or aall or nall then return msg("Г‘ГҐГ©Г·Г Г± ГўГЄГ«ГѕГ·ГҐГ­Г® Г­Г  ГўГ±ГҐГµ, ГЄГіГ¤Г  ГІГ» Г«ГҐГ§ГҐГёГј ГҐГЎГ ГІГј") end
 		if not isCharInAnyCar(1) then
-			return msg("Сядь в машину долбаеб")
+			return msg("Г‘ГїГ¤Гј Гў Г¬Г ГёГЁГ­Гі Г¤Г®Г«ГЎГ ГҐГЎ")
 		end
 		if getDriverOfCar(storeCarCharIsInNoSave(1)) ~= 1 then
-			return msg("Ты берега попутал чтоле? За руль бегом сел")
+			return msg("Г’Г» ГЎГҐГ°ГҐГЈГ  ГЇГ®ГЇГіГІГ Г« Г·ГІГ®Г«ГҐ? Г‡Г  Г°ГіГ«Гј ГЎГҐГЈГ®Г¬ Г±ГҐГ«")
 		end
 		if not isThisModelACar(getCarModel(storeCarCharIsInNoSave(PLAYER_PED))) then	
-			return msg("Вылези с этой хуйни и сядь в норм бутылку!")
+			return msg("Г‚Г»Г«ГҐГ§ГЁ Г± ГЅГІГ®Г© ГµГіГ©Г­ГЁ ГЁ Г±ГїГ¤Гј Гў Г­Г®Г°Г¬ ГЎГіГІГ»Г«ГЄГі!")
 		end
 		if tonumber(id) ~= nil and id ~= nil and id ~= "" and tonumber(id) < 1000 and tonumber(id) >= 0 then
 			id = tonumber(id)
@@ -167,22 +165,22 @@ function start(id)
 				local pX,pY,pZ = getCharCoordinates(PLAYER_PED)
 				if getDistanceBetweenCoords3d(pX,pY,pZ,tX,tY,tZ) < 40 then
 					if not sampIsPlayerPaused(id) then
-						msg("Выбранная цель "..sampGetPlayerNickname(id).." ("..id..")")
+						msg("Г‚Г»ГЎГ°Г Г­Г­Г Гї Г¶ГҐГ«Гј "..sampGetPlayerNickname(id).." ("..id..")")
 						lua_thread.create(fire, id)
 					else
-						msg("Цель в AFK!")
+						msg("Г–ГҐГ«Гј Гў AFK!")
 					end
 				else
-					msg("Цель далеко!")
+					msg("Г–ГҐГ«Гј Г¤Г Г«ГҐГЄГ®!")
 				end
 			else
-				msg("Цель не в зоне стрима!")
+				msg("Г–ГҐГ«Гј Г­ГҐ Гў Г§Г®Г­ГҐ Г±ГІГ°ГЁГ¬Г !")
 			end
 		else
-			msg("Введите правильно ID!")
+			msg("Г‚ГўГҐГ¤ГЁГІГҐ ГЇГ°Г ГўГЁГ«ГјГ­Г® ID!")
 		end
 	else
-		msg("Подождите!")
+		msg("ГЏГ®Г¤Г®Г¦Г¤ГЁГІГҐ!")
 	end
 end
 
@@ -204,17 +202,17 @@ function firen(id)
 	state = false
 	sampSendChat("/limit 0") 
 	sampSendChat("/limit") 
-	msg("Отправлен в ад")
+	msg("ГЋГІГЇГ°Г ГўГ«ГҐГ­ Гў Г Г¤")
 end
 
 function startn(id)
 	if not state and not velo then
-		if dall or aall or nall then return msg("Сейчас включено на всех, куда ты лезешь ебать") end
+		if dall or aall or nall then return msg("Г‘ГҐГ©Г·Г Г± ГўГЄГ«ГѕГ·ГҐГ­Г® Г­Г  ГўГ±ГҐГµ, ГЄГіГ¤Г  ГІГ» Г«ГҐГ§ГҐГёГј ГҐГЎГ ГІГј") end
 		if not isCharInAnyCar(1) then
-			return msg("Сядь в машину долбаеб")
+			return msg("Г‘ГїГ¤Гј Гў Г¬Г ГёГЁГ­Гі Г¤Г®Г«ГЎГ ГҐГЎ")
 		end
 		if getDriverOfCar(storeCarCharIsInNoSave(1)) ~= 1 then
-			return msg("Ты берега попутал чтоле? За руль бегом сел")
+			return msg("Г’Г» ГЎГҐГ°ГҐГЈГ  ГЇГ®ГЇГіГІГ Г« Г·ГІГ®Г«ГҐ? Г‡Г  Г°ГіГ«Гј ГЎГҐГЈГ®Г¬ Г±ГҐГ«")
 		end
 		if tonumber(id) ~= nil and id ~= nil and id ~= "" and tonumber(id) < 1000 and tonumber(id) >= 0 then
 			id = tonumber(id)
@@ -224,22 +222,22 @@ function startn(id)
 				local pX,pY,pZ = getCharCoordinates(PLAYER_PED)
 				if getDistanceBetweenCoords3d(pX,pY,pZ,tX,tY,tZ) < 100 then
 					if not sampIsPlayerPaused(id) then
-						msg("Выбранная цель "..sampGetPlayerNickname(id).." ("..id..")")
+						msg("Г‚Г»ГЎГ°Г Г­Г­Г Гї Г¶ГҐГ«Гј "..sampGetPlayerNickname(id).." ("..id..")")
 						lua_thread.create(firen, id)
 					else
-						msg("Цель в AFK!")
+						msg("Г–ГҐГ«Гј Гў AFK!")
 					end
 				else
-					msg("Цель далеко!")
+					msg("Г–ГҐГ«Гј Г¤Г Г«ГҐГЄГ®!")
 				end
 			else
-				msg("Цель не в зоне стрима!")
+				msg("Г–ГҐГ«Гј Г­ГҐ Гў Г§Г®Г­ГҐ Г±ГІГ°ГЁГ¬Г !")
 			end
 		else
-			msg("Введите правильно ID!")
+			msg("Г‚ГўГҐГ¤ГЁГІГҐ ГЇГ°Г ГўГЁГ«ГјГ­Г® ID!")
 		end
 	else
-		msg("Подождите!")
+		msg("ГЏГ®Г¤Г®Г¦Г¤ГЁГІГҐ!")
 	end
 end
 
@@ -253,7 +251,7 @@ function fired(id)
 	local time = os.clock()
 	while not state and velo do wait(0)
 		if os.clock() - time >= 5 then
-			msg("Чтото пошло не так, выключил")
+			msg("Г—ГІГ®ГІГ® ГЇГ®ГёГ«Г® Г­ГҐ ГІГ ГЄ, ГўГ»ГЄГ«ГѕГ·ГЁГ«")
 			velo = false
 			state = false
 		end
@@ -270,18 +268,18 @@ function fired(id)
 		state = false
 		sampSendChat("/limit") 
 		sampSendChat("/limit 0") 
-		msg("Отправлен в ад")
+		msg("ГЋГІГЇГ°Г ГўГ«ГҐГ­ Гў Г Г¤")
 	end
 end
 
 function startd(id)
 	if not state and not velo then
-		if dall or aall or nall then return msg("Сейчас включено на всех, куда ты лезешь ебать") end
+		if dall or aall or nall then return msg("Г‘ГҐГ©Г·Г Г± ГўГЄГ«ГѕГ·ГҐГ­Г® Г­Г  ГўГ±ГҐГµ, ГЄГіГ¤Г  ГІГ» Г«ГҐГ§ГҐГёГј ГҐГЎГ ГІГј") end
 		if not isCharInAnyCar(1) then
-			return msg("Сядь в машину долбаеб")
+			return msg("Г‘ГїГ¤Гј Гў Г¬Г ГёГЁГ­Гі Г¤Г®Г«ГЎГ ГҐГЎ")
 		end
 		if getDriverOfCar(storeCarCharIsInNoSave(1)) ~= 1 then
-			return msg("Ты берега попутал чтоле? За руль бегом сел")
+			return msg("Г’Г» ГЎГҐГ°ГҐГЈГ  ГЇГ®ГЇГіГІГ Г« Г·ГІГ®Г«ГҐ? Г‡Г  Г°ГіГ«Гј ГЎГҐГЈГ®Г¬ Г±ГҐГ«")
 		end
 		if tonumber(id) ~= nil and id ~= nil and id ~= "" and tonumber(id) < 1000 and tonumber(id) >= 0 then
 			id = tonumber(id)
@@ -291,22 +289,22 @@ function startd(id)
 				local pX,pY,pZ = getCharCoordinates(PLAYER_PED)
 				if getDistanceBetweenCoords3d(pX,pY,pZ,tX,tY,tZ) < 40 then
 					if not sampIsPlayerPaused(id) then
-						msg("Выбранная цель "..sampGetPlayerNickname(id).." ("..id..")")
+						msg("Г‚Г»ГЎГ°Г Г­Г­Г Гї Г¶ГҐГ«Гј "..sampGetPlayerNickname(id).." ("..id..")")
 						lua_thread.create(fired, id)
 					else
-						msg("Цель в AFK!")
+						msg("Г–ГҐГ«Гј Гў AFK!")
 					end
 				else
-					msg("Цель далеко!")
+					msg("Г–ГҐГ«Гј Г¤Г Г«ГҐГЄГ®!")
 				end
 			else
-				msg("Цель не в зоне стрима!")
+				msg("Г–ГҐГ«Гј Г­ГҐ Гў Г§Г®Г­ГҐ Г±ГІГ°ГЁГ¬Г !")
 			end
 		else
-			msg("Введите правильно ID!")
+			msg("Г‚ГўГҐГ¤ГЁГІГҐ ГЇГ°Г ГўГЁГ«ГјГ­Г® ID!")
 		end
 	else
-		msg("Подождите!")
+		msg("ГЏГ®Г¤Г®Г¦Г¤ГЁГІГҐ!")
 	end
 end
 
@@ -357,15 +355,15 @@ function hook.onSetVehicleVelocity(turn, pos)
 end
 
 function hook.onServerMessage(color, text)
-	if text:find("Используйте .* для установки ограничителя скорости") or text:find(".* 0, отключить ограничитель") then
+	if text:find("Г€Г±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ .* Г¤Г«Гї ГіГ±ГІГ Г­Г®ГўГЄГЁ Г®ГЈГ°Г Г­ГЁГ·ГЁГІГҐГ«Гї Г±ГЄГ®Г°Г®Г±ГІГЁ") or text:find(".* 0, Г®ГІГЄГ«ГѕГ·ГЁГІГј Г®ГЈГ°Г Г­ГЁГ·ГЁГІГҐГ«Гј") then
 		return false
 	end
-	if text:find("Эта функция доступна только в авто") then
+	if text:find("ГќГІГ  ГґГіГ­ГЄГ¶ГЁГї Г¤Г®Г±ГІГіГЇГ­Г  ГІГ®Г«ГјГЄГ® Гў Г ГўГІГ®") then
 		velo = false
 		state = false
-		msg("Пересядь в авто, на этом драпиздоне нихуя не сделаешь!") 
+		msg("ГЏГҐГ°ГҐГ±ГїГ¤Гј Гў Г ГўГІГ®, Г­Г  ГЅГІГ®Г¬ Г¤Г°Г ГЇГЁГ§Г¤Г®Г­ГҐ Г­ГЁГµГіГї Г­ГҐ Г±Г¤ГҐГ«Г ГҐГёГј!") 
 	end
-	if text:find("Ограничение скорости снято") or text:find("Установлено ограничение скорости") or text:find("/limit %[скорость%]") then
+	if text:find("ГЋГЈГ°Г Г­ГЁГ·ГҐГ­ГЁГҐ Г±ГЄГ®Г°Г®Г±ГІГЁ Г±Г­ГїГІГ®") or text:find("Г“Г±ГІГ Г­Г®ГўГ«ГҐГ­Г® Г®ГЈГ°Г Г­ГЁГ·ГҐГ­ГЁГҐ Г±ГЄГ®Г°Г®Г±ГІГЁ") or text:find("/limit %[Г±ГЄГ®Г°Г®Г±ГІГј%]") then
 		return false
 	end
 end
@@ -399,7 +397,7 @@ end
 
 function hook.onVehicleSync(playerId, vehicleId, data)
     if data.moveSpeed.x > 1 and data.moveSpeed.y > 1 and data.moveSpeed.z > 1 then
-		sampAddChatMessage("AntiRvanka by GoxaShow > "..playerId.." на своей бутылке "..vehicleId.." пытается рванить, успокой его",-1)
+		sampAddChatMessage("AntiRvanka by GoxaShow > "..playerId.." Г­Г  Г±ГўГ®ГҐГ© ГЎГіГІГ»Г«ГЄГҐ "..vehicleId.." ГЇГ»ГІГ ГҐГІГ±Гї Г°ГўГ Г­ГЁГІГј, ГіГ±ГЇГ®ГЄГ®Г© ГҐГЈГ®",-1)
 		return false
 	end
 end
